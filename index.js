@@ -9,7 +9,7 @@ mongoose.connect("mongodb://cactaceous:dbcactaceous@cactaceous-shard-00-00-oxmnw
     .then(resp => {
         console.log('Connected..')
     })
-    .catch(err => console.log('err'))
+    .catch(err => console.log(err))
 
 app.listen(port, ()=> {
     console.log(`Listening in the port: ${port}`);
