@@ -5,7 +5,7 @@ const api = require('./api');
 
 const port = 8000;
 
-mongoose.connect(process.env.MONGO_ATLAS)
+mongoose.connect("mongodb://cactaceous:dbcactaceous@cactaceous-shard-00-00-oxmnw.mongodb.net:27017,cactaceous-shard-00-01-oxmnw.mongodb.net:27017,cactaceous-shard-00-02-oxmnw.mongodb.net:27017/test?ssl=true&replicaSet=cactaceous-shard-0&authSource=admin&retryWrites=true")
     .then(resp => {
         console.log('Connected..')
     })
