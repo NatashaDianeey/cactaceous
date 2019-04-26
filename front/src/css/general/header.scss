@@ -1,0 +1,146 @@
+@import "variables.scss";
+
+.header {
+    width: 100%;
+    min-height: 60px;
+    /* min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white; */
+    // background-color: rgba(255, 255, 255, 0.6);
+    background-color: white;
+    position: fixed;
+    top: 0;
+    // background-color: transparent;
+    left: 0;
+    right: 0;
+    color: $primaryColor;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    
+        width: calc(100% - 40px);
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        /* background-color: steelblue; */
+    }
+    &__brand {
+        img {
+            width: 115px;
+            // filter: invert(1);
+        }
+    }
+
+    &__menu {
+        @extend %CircularStdNormal;
+        font-size: 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &-list {
+            display: none;
+            background-color: white;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            min-height: 30vh;
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                min-height: 30vh;
+                li {
+                    margin: 0 10px;
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        bottom: -4px;
+                        left: 0;
+                        width: 0;
+                        height: 2px;
+                        background-color: $primaryColor;
+                        content: "";
+                        transition: width 0.5s ease, background-color 0.5s ease;
+                    }
+                    &:hover {
+                        &:before {
+                            background-color: $primaryColor;
+                            width: 100%;
+                            color: $primaryColor;
+                        }
+                    }
+                    a {
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+
+        &-icons {
+            display: flex;
+            flex-direction: row;
+            .menuSvg {
+                width: 20px;
+            }
+            .searchSvg {
+                width: 15px;
+                height: auto;
+                margin-right: 20px;        
+            }
+        }
+    }
+}
+
+
+
+// M E D I A  Q U E R I E S   --   F I R S T   M O B I L E
+
+@media only screen and (min-width: 480px) {
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .header {
+        &__brand {
+            img {
+                width: 150px;
+            }
+        }
+        &__menu {
+            &-list {
+                display: flex;
+                background-color: transparent;
+                position: initial;
+                min-height: initial;
+                ul {
+                    flex-direction: row;
+                    height: auto;
+                    min-height: initial;
+                }
+            }
+    
+            &-icons {
+                .menuSvg {
+                    display: none;
+                }
+                .searchSvg {
+                    margin-right: 0;
+                    margin-left: 20px;
+                }
+            }
+        }
+    }
+}

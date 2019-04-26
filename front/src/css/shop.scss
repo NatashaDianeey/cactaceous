@@ -1,0 +1,89 @@
+@import "general/variables.scss";
+.shop {
+    min-height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    &__container {
+        max-width: 1240px;
+        margin: 0 auto;
+        // min-height: calc(100vh - 90px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 70px 20px 60px 20px;
+        .grid {
+            display: grid;
+            grid-row-gap: 50px;
+            grid-template-columns: 1fr;
+            grid-column-gap: 60px;
+            list-style: none;
+            li {
+                // height: 300px;
+                img {
+                    height: 100%;
+                    max-height: 430px;
+                    object-fit: cover;
+                }
+                .title-product {
+                    @extend %CircularStdBold;
+                    font-size: 18px;
+                    padding: 30px 0 0;
+                    display: block;
+                }
+                a {
+                    text-decoration: none;
+                    color: $primaryColor;
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .titles-pages {
+            @extend %CircularStdBold;
+            font-size: 22px;
+            padding: 0 0 40px 0;
+        }
+    }
+}
+
+
+
+
+
+// @media only screen and (max-width: 768px) {
+//     .shop__container .grid {
+//         grid-template-columns: 1fr 1fr;
+//     }
+// }
+
+// @media only screen and (max-width: 480px) {
+//     .shop__container .grid {
+//         // background-color: red;
+//         grid-template-columns: 1fr;
+//     }
+// }
+
+
+// M E D I A  Q U E R I E S   --   F I R S T   M O B I L E
+
+@media only screen and (min-width: 480px) {
+    .shop__container {
+        .grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .shop__container {
+        padding: 60px 20px 0;
+        .grid {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
